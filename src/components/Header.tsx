@@ -1,8 +1,15 @@
 import { Button } from '@chakra-ui/button';
-import { Box, Flex, HStack } from '@chakra-ui/react';
-import { BiWorld } from 'react-icons/bi'
+import { Box, Flex, HStack, Link } from '@chakra-ui/react';
+import { useState } from 'react';
+import { BiWorld } from 'react-icons/bi';
 
 export function Header() {
+  const [isDefaultLanguage, setIsDefaultLanguage] = useState(true);
+
+  function handleLanguage() {
+    setIsDefaultLanguage(!!!isDefaultLanguage);
+  }
+
   return (
     <Box>
       <Flex
@@ -16,15 +23,15 @@ export function Header() {
         <HStack spacing="1rem">
           <Button>Sobre</Button>
           <Button>Experiências</Button>
-          <Button>Stacks</Button>
+          <Button as={Link} href="#stacks">Stacks</Button>
         </HStack>
 
         <HStack spacing="1rem">
           <Button>Contato</Button>
 
-          <Button align="center">
+          <Button align="center" onClick={() => handleLanguage()}>
             <BiWorld />
-            English
+            {isDefaultLanguage ? 'Português' : 'Inglês'}
           </Button>
         </HStack>
       </Flex>
