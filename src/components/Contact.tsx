@@ -14,7 +14,7 @@ import IconLogo from './IconLogo';
 import { SiLinkedin } from 'react-icons/si';
 
 export default function Contact() {
-    const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <Flex
@@ -23,7 +23,7 @@ export default function Contact() {
       flexDirection="column"
       maxW={1680}
       mx="auto"
-      px={20}
+      px={{ base: 6, md: 20 }}
       py={6}
       id="contact"
     >
@@ -42,14 +42,18 @@ export default function Contact() {
         bgColor={colorMode === 'dark' ? '#5f5f5f57' : 'white'}
         rounded="3xl"
         p={8}
+        flexDirection={{ base: 'column', md: 'row' }}
       >
-        <Image src="mail.svg" width="25%" />
+        <Image
+          src="mail.svg"
+          width={{ base: '70%', md: '25%' }}
+          mb={{ base: '10' }}
+        />
 
         <Link
           href="mailto:vinicius.moreira2003@gmail.com"
-          fontSize="1.5rem"
+          fontSize={{ base: '1rem', md: '1.5rem' }}
           fontWeight="bold"
-          
         >
           vinicius.moreira2003@gmail.com
         </Link>

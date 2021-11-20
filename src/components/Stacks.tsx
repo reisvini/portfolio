@@ -1,24 +1,19 @@
-import {
-  Flex,
-  HStack,
-  Text,
-  Divider,
-} from '@chakra-ui/react';
+import { Flex, HStack, Text, Divider } from '@chakra-ui/react';
 import { HiChip } from 'react-icons/hi';
 import {
   SiCss3,
   SiGit,
   SiHtml5,
   SiJavascript,
-  SiNextDotJs,
-  SiNodeDotJs,
   SiReact,
   SiSass,
   SiTypescript,
+  SiNestjs,
+  SiNextdotjs,
 } from 'react-icons/si';
 import { AiOutlineApi } from 'react-icons/ai';
-import { BsArrowUpDown } from 'react-icons/bs';
-import { FaDatabase } from 'react-icons/fa';
+import { BsArrowUpCircle } from 'react-icons/bs';
+import { FaDatabase, FaNodeJs } from 'react-icons/fa';
 import IconLogo from './IconLogo';
 
 export function Stacks() {
@@ -29,19 +24,23 @@ export function Stacks() {
       flexDirection="column"
       maxW={1680}
       mx="auto"
-      px={20}
+      px={{ base: 6, md: 20 }}
       py={6}
       id="stacks"
     >
       <IconLogo Icon={HiChip} />
 
-      <Text fontSize="2.5rem" fontWeight="bold" mb={4}>
+      <Text
+        fontSize={{ base: '1.7rem', md: '2.5rem' }}
+        fontWeight="bold"
+        mb={4}
+      >
         Stacks & Techs
       </Text>
 
       <Divider />
 
-      <HStack spacing="3rem" mt={10} >
+      <HStack spacing={{ base: '1rem', md: '3rem' }} mt={10}>
         <IconLogo
           Icon={SiJavascript}
           Description="JavaScript"
@@ -58,12 +57,49 @@ export function Stacks() {
           Description="React Native"
           iconColor="#61dbfb"
         />
-        <IconLogo Icon={SiNextDotJs} Description="NextJS" />
-        <IconLogo Icon={SiNodeDotJs} Description="NodeJS" iconColor="#68a063" />
-        <IconLogo Icon={SiHtml5} Description="HTML" iconColor="#e34c26" />
+        <IconLogo
+          Icon={SiNextdotjs}
+          Description="NextJS"
+          display={{ base: 'none', md: 'inline' }}
+        />
+        <IconLogo
+          Icon={FaNodeJs}
+          Description="NodeJS"
+          iconColor="#68a063"
+          display={{ base: 'none', md: 'inline' }}
+        />
+        <IconLogo
+          Icon={SiNestjs}
+          Description="NestJS"
+          iconColor="#e60000"
+          display={{ base: 'none', md: 'inline' }}
+        />
+        <IconLogo
+          Icon={SiHtml5}
+          Description="HTML"
+          iconColor="#e34c26"
+          display={{ base: 'none', md: 'inline' }}
+        />
       </HStack>
-      <HStack spacing="3rem" mt={10}>
+
+      <HStack
+        spacing={{ base: '2rem', md: '3rem' }}
+        mt={10}
+        display={{ base: 'flex', md: 'none' }}
+      >
+        <IconLogo Icon={SiNextdotjs} Description="NextJS" />
+        <IconLogo Icon={FaNodeJs} Description="NodeJS" iconColor="#68a063" />
+        <IconLogo Icon={SiHtml5} Description="HTML" iconColor="#e34c26" />
         <IconLogo Icon={SiCss3} Description="CSS" iconColor="#264de4 " />
+      </HStack>
+
+      <HStack spacing={{ base: '1rem', md: '3rem' }} mt={10}>
+        <IconLogo
+          Icon={SiCss3}
+          Description="CSS"
+          iconColor="#264de4 "
+          display={{ base: 'none', md: 'inline' }}
+        />
         <IconLogo Icon={SiSass} Description="Sass" iconColor="#cd6799" />
         <IconLogo Icon={SiGit} Description="Git" iconColor="#f34f29" />
 
@@ -74,7 +110,7 @@ export function Stacks() {
         />
         <IconLogo Icon={AiOutlineApi} Description="APIs" />
         <IconLogo
-          Icon={BsArrowUpDown}
+          Icon={BsArrowUpCircle}
           Description="CI/CD"
           iconColor="#007acc"
         />

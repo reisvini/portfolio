@@ -31,19 +31,26 @@ export function Experiences() {
       alignItems="center"
       maxW={1680}
       mx="auto"
-      px={20}
+      px={{ base: 6, md: 20 }}
       py={6}
     >
       <IconLogo Icon={RiContactsBook2Line} />
 
-      <Text fontSize="2.5rem" fontWeight="bold" mb={4}>
+      <Text
+        fontSize={{ base: '1.7rem', md: '2.5rem' }}
+        fontWeight="bold"
+        mb={4}
+      >
         Experiências e Projetos
       </Text>
 
       <Divider />
-      <Text fontSize="1.5rem"></Text>
 
-      <Grid mt={10} templateColumns="repeat(2, 1fr)" gap={20}>
+      <Grid
+        mt={10}
+        templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
+        gap={{ base: 6, md: 20 }}
+      >
         {results.map((result) => (
           <ProjectItem
             key={result.uid}

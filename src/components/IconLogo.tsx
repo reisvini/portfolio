@@ -4,11 +4,13 @@ interface IconLogoProps {
   Icon: any;
   Description?: string;
   iconColor?: string;
+  display?: string | object;
+  
 }
 
-export default function IconLogo({ Icon, Description, iconColor }: IconLogoProps) {
+export default function IconLogo({ Icon, Description, iconColor, display }: IconLogoProps) {
   return (
-    <Box alignItems="center" justifyContent="center" mx="auto">
+    <Box alignItems="center" justifyContent="center" mx="auto" display={display}>
       <Box fontSize={{ base: "4xl", md: "6xl" }} align="center" color={iconColor}>
         <Icon />
       </Box>

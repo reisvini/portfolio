@@ -20,11 +20,19 @@ export default function ProjectItem({
   const { colorMode } = useColorMode();
 
   return (
-    <Box bgColor="#f7f4f4" p={8} rounded="3xl">
-      <Text fontSize="2.5rem" textColor="#737ef1" fontWeight="bold">
+    <Box bgColor="#f7f4f4" p={{ base: 5, md: 8 }} rounded="3xl">
+      <Text
+        fontSize={{ base: '1.5rem', md: '2.5rem' }}
+        textColor="#737ef1"
+        fontWeight="bold"
+      >
         {title}
       </Text>
-      <Text py={8} fontSize="1.4rem" textColor="#000000">
+      <Text
+        py={{ base: 4, md: 8 }}
+        fontSize={{ base: '1rem', md: '1.4rem' }}
+        textColor="#000000"
+      >
         {description}
       </Text>
 
@@ -34,15 +42,18 @@ export default function ProjectItem({
         _focus={{ boxShadow: 'none' }}
         textColor="#000000"
       >
-        <Box bgColor="#c5c5c517" p={10} rounded="3xl">
+        <Box bgColor={{ base: '', md: "#c5c5c517" }} p={{ base: 0, md: 10 }} rounded="3xl">
           <Image
             src={preview_image}
             alt="Project Preview"
             maxW="576"
             maxH="276"
+            display={{ base: 'none', md: 'flex' }}
           />
 
-          <Text pt={10} fontWeight="semibold">Github Repo</Text>
+          <Text pt={{ base: 0, md: 10 }} fontWeight="semibold">
+            Github Repo
+          </Text>
         </Box>
       </Link>
     </Box>

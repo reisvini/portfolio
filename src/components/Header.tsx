@@ -15,14 +15,15 @@ export function Header() {
   return (
     <Box>
       <Flex
-        justifyContent="space-between"
+        justifyContent={{ base: 'flex-end', md: 'space-between' }}
         alignItems="center"
         maxW={1680}
         mx="auto"
-        px={20}
-        py={6}
+        px={{ base: 12, md: 20 }}
+        pt={{ base: 6, md: 6 }}
+        pb={{ base: 0, md: 6 }}
       >
-        <HStack spacing="1rem">
+        <HStack spacing="1rem" display={{ base: "none", md: "flex" }}>
           <Button as={Link} href="#about">
             Sobre
           </Button>
